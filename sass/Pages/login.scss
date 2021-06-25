@@ -1,0 +1,137 @@
+@import "../Base/typography";
+@import "../Base/variables";
+@import "../Base/base";
+@import "../Components/buttons";
+@import "../Abstracts/mixins";
+@import "../Abstracts/responsive-rules";
+body {
+  background-color: $background-color;
+  height: 100vh;
+  overflow: hidden;
+  @include flexbox(center, center);
+  background: url("../images/SVG/illustration-back.svg"),
+    url("../images/SVG/illustration-back-2.svg");
+  background-repeat: no-repeat;
+  background-position: left center, right center;
+}
+.main {
+  width: 73.5vw;
+  height: 72vh;
+  background-color: $white-color;
+  box-shadow: 0 0 4.5rem rgba($black-color, 0.16);
+
+  padding: 2.5rem;
+  border-radius: 3px;
+  .login-box {
+    @include flexbox(space-between, center);
+    height: 100%;
+    overflow: hidden;
+  }
+  .logo-box {
+    @include flexbox(space-between, flex-start);
+    flex-direction: column;
+    row-gap: 2.5rem;
+    height: 100%;
+    .illustration-login {
+      flex-grow: 1;
+      height: calc(100% - 8.5rem);
+      img {
+        object-fit: fill;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .form-box {
+    text-align: center;
+    flex-basis: min-content;
+    margin: auto;
+    .input {
+      position: relative;
+      &__icon {
+        fill: $light-gray-border;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        display: inline-block;
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+    }
+    .input-login {
+      display: block;
+      width: 43.5rem;
+      color: $light-gray-border;
+      border-radius: 15px;
+      border: 2px solid currentColor;
+      font-size: 2.2rem;
+      padding: 1.5rem 2.2rem;
+      outline: none;
+      margin-bottom: 1.5rem;
+      text-indent: 5rem;
+    }
+  }
+}
+
+@include respond("mobile") {
+  body {
+    background-color: $background-color;
+    height: 100vh;
+    overflow: hidden;
+    @include flexbox(center, center);
+    background: url("../images/SVG/illustration-back-mob.svg"),
+      url("../images/SVG/illustration-back-2-mob.svg");
+    background-repeat: no-repeat;
+    background-position: right bottom, left top;
+  }
+  .main {
+    width: 90vw;
+    height: 45vh;
+    padding: 2.5rem;
+    border-radius: 3px;
+    .login-box {
+      flex-direction: column;
+      overflow: visible;
+    }
+    .logo-box {
+      all: unset;
+      display: inline-block;
+      margin-right: auto;
+      & .logo {
+        display: block;
+        img {
+          height: 40px;
+        }
+      }
+      .illustration-login {
+        all: unset;
+        display: none;
+        img {
+          all: unset;
+        }
+      }
+    }
+    .form-box {
+      width: 100%;
+      .input {
+        position: relative;
+      }
+      .input-login {
+        width: 100%;
+      }
+    }
+  }
+}
+:required {
+  box-shadow: unset;
+}
+
+.swal2-container.swal2-backdrop-show,
+.swal2-container.swal2-noanimation {
+  background-color: rgba($black-color, 0.65) !important;
+  backdrop-filter: blur(25px);
+}
+body.swal2-height-auto {
+  height: 100vh !important;
+}

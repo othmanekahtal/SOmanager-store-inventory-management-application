@@ -1,0 +1,28 @@
+@import "../Abstracts/responsive-rules";
+
+%width_icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  @include respond("mobile") {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+%padding-table {
+  padding: 2.5rem;
+  padding-top: 0;
+}
+
+%popup {
+  position: relative;
+  width: 60%;
+  margin: auto;
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  display: grid;
+  grid-gap: 2.5rem;
+  @include respond("mobile") {
+    width: 90%;
+  }
+}

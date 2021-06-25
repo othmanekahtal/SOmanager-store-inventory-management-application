@@ -1,0 +1,8 @@
+@mixin flexbox($jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin transition($property: all) {
+  transition: $property 0.36s ease-in-out;
+}

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import "../Base/variables";
+@import "../Abstracts/responsive-rules";
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.4;
+  color: $black-color;
+  font-size: 2.2rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  @include respond("mobile") {
+    font-size: 1.55rem;
+  }
+}
+.primary-heading {
+  font-size: 4.25rem;
+  padding-bottom: 2.5rem;
+  color: $black-color;
+  text-transform: uppercase;
+}
+
+.secondary-heading {
+  font-size: 3.75rem;
+  text-transform: capitalize;
+}

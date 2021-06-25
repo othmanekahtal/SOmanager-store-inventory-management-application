@@ -1,0 +1,10 @@
+body {
+  background-color: #0e2652; }
+
+.main {
+  background-color: #001235;
+  box-shadow: 0 0 4.5rem black; }
+  .main .primary-heading {
+    color: #ffffff; }
+  .main .input input[type] {
+    background-color: transparent; }

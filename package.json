@@ -1,0 +1,37 @@
+{
+  "name": "somanager-store-inventory-management-application",
+  "version": "1.0.0",
+  "description": "application that will manage the inventory of a store You are required to create a mockup / prototype for the desktop and mobile versions and carry out the front-end and back-end of the application.",
+  "main": "index.js",
+  "scripts": {
+    "watch:login": "node-sass sass/Pages/login.scss css/login.css --watch",
+    "watch:dashboard": "node-sass sass/Pages/Dashboard.scss css/Dashboard.css --watch",
+    "watch:login-dark": "node-sass sass/Themes/login-Dark-mode.scss css/login-dark.css --watch",
+    "watch:dashboard-dark": "node-sass sass/Themes/Dashboard-Dark-mode.scss css/Dashboard-dark.css --watch",
+    "live-server": "live-server",
+    "start-coding": "npm-run-all --parallel watch:login watch:dashboard-dark watch:login-dark watch:dashboard live-server",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/othmanekahtal/SOmanager-store-inventory-management-application.git"
+  },
+  "author": "othmane kahtal & sif eddine rkhiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/othmanekahtal/SOmanager-store-inventory-management-application/issues"
+  },
+  "homepage": "https://github.com/othmanekahtal/SOmanager-store-inventory-management-application#readme",
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

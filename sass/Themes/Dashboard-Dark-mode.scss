@@ -1,0 +1,74 @@
+@import "../Base/variables";
+@import "../Base/utilities";
+body {
+  background-color: $background-color-dark;
+}
+.asidebar {
+  background-color: $secondary-background-color-dark;
+  &__icon {
+    @extend .search-icon;
+  }
+}
+.search-icon {
+  fill: $white-color;
+}
+
+.navbar {
+  .input-search {
+    input {
+      color: white;
+      @extend .asidebar;
+    }
+  }
+  &__option {
+    @extend .search-icon;
+    &--list {
+      fill: rgba($white-color, 0.45);
+      &:hover {
+        fill: rgba($white-color, 1);
+      }
+    }
+  }
+}
+.table {
+  @extend .asidebar;
+  .body-table.table-row {
+    &:hover {
+      background-color: rgba($white-color, 0.85);
+    }
+  }
+}
+.popup_edit{
+  background-color: $background-color-dark;
+  .close-popup {
+    svg {
+      fill: $white-color;
+    }
+  }
+  .secondary-heading {
+    color: $white-color;
+  }
+  .img_box {
+    background-color: transparent;
+    border: 3px dashed $secondary-background-color-dark;
+  }
+  input,
+  textarea {
+    background-color: $secondary-background-color-dark !important;
+  }
+}
+
+.add_product{
+  @extend .popup_edit;
+}
+.popup_view {
+  background-color: $background-color-dark;
+  .secondary-heading,
+  span {
+    color: $white-color;
+  }
+  .close-popup svg {
+    fill: $white-color;
+  }
+}
+

@@ -1,0 +1,193 @@
+@import "../Base/base";
+@import "../Base/typography";
+@import "../Base/utilities";
+@import "../Abstracts/%";
+@import "../Abstracts/responsive-rules";
+@import "../Components/buttons";
+@import "../Components/widgets";
+@import "../Abstracts/mixins";
+@import "../Base/variables";
+@import "../Base/utilities";
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: [side-bar] min-content [side-bar-end] 5rem [start-product-col] 1fr [end-product-col] 5rem;
+  grid-template-rows: [top-gutter] 5rem [end-top-gutter start-top-bar] 7.5rem [end-top-bar second-gutter] 5rem [end-second-gutter start-product-row] 1fr [end-product-row third-gutter] 5rem [end-third-gutter];
+  @include respond("mobile") {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    grid-template-columns: [side-bar] min-content [side-bar-end] 2.5rem [start-product-col] 1fr [end-product-col] 2.5rem;
+    grid-template-rows: [top-gutter] 2.5rem [end-top-gutter start-top-bar] 2.5rem 2.5rem [end-top-bar second-gutter] 2.5rem [end-second-gutter start-product-row] 1fr [end-product-row third-gutter] 2.5rem [end-third-gutter];
+  }
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 5rem;
+  left: calc((10rem - 22.5px) / 2);
+  z-index: 100;
+  @include respond("mobile") {
+    display: block;
+  }
+
+  .menu {
+    &,
+    &::after,
+    &::before {
+      display: block;
+      width: 22.5px;
+      height: 2px;
+      border-radius: 5rem;
+      background-color: $white-color;
+      @include transition();
+    }
+
+    &::before {
+      content: "";
+      transform: translateY(5px);
+    }
+
+    &::after {
+      content: "";
+      transform: translateY(-7px);
+    }
+
+    &-active {
+      background-color: transparent;
+
+      &::before {
+        transform: translateY(0px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateY(-2px) rotate(-45deg);
+      }
+    }
+  }
+
+  @include respond("mobile") {
+    display: block;
+  }
+}
+
+.asidebar {
+  background-color: $extra-light-gray-color;
+  @include respond("mobile") {
+    width: 0;
+    box-shadow: 0.5rem 0 0.5rem #0000002b;
+    overflow: hidden;
+    @include transition();
+  }
+
+  &-active {
+    width: 10rem;
+    position: absolute;
+    height: 100%;
+    z-index: 99;
+  }
+
+  .logo-box {
+    padding: 1.5rem;
+
+    img {
+      @include respond("mobile") {
+        display: none;
+      }
+    }
+
+    svg {
+      display: none;
+      @include respond("mobile") {
+        margin-top: 2.5rem;
+        display: block;
+      }
+    }
+  }
+
+  &__logout {
+    .logout-icon {
+      fill: $red-color;
+
+      &:hover {
+        fill: darken($red-color, 10%);
+      }
+    }
+  }
+}
+
+.navbar {
+  .input-search {
+    input {
+      background-color: $extra-light-gray-color;
+    }
+  }
+
+  &__option {
+    &--list {
+      fill: rgba($light-gray-border, 0.45);
+
+      &:hover {
+        fill: rgba($light-gray-border, 1);
+      }
+    }
+  }
+}
+
+.table {
+  background-color: $extra-light-gray-color;
+
+  * {
+    color: $light-gray-border;
+  }
+
+  .border-header {
+    background-color: $light-gray-border;
+  }
+
+  .col-6.col-actions {
+    & .border-right {
+      background-color: $light-gray-border;
+    }
+  }
+
+  &__icons {
+    fill: $light-gray-border;
+
+    &--blue {
+      fill: $blue-color;
+    }
+
+    &--red {
+      fill: $red-color;
+    }
+  }
+}
+
+.popup_edit {
+  background-color: $white-color;
+}
+
+.add_product {
+  @extend .popup_edit;
+}
+
+.popup_view {
+  background-color: $white-color;
+
+  .secondary-heading {
+    color: $black-color;
+  }
+}
+
+.id_input {
+  display: none !important;
+}
+
+.hidden_element {
+  display: none;
+}

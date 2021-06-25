@@ -1,0 +1,17 @@
+@import "../Abstracts/responsive-rules";
+* {
+  &,
+  &::after,
+  &::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+html {
+  // initialization rem :
+  font-size: 62.5%;
+  @include respond("mobile") {
+    font-size: 45.5%;
+  }
+}

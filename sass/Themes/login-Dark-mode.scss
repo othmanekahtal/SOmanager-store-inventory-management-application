@@ -1,0 +1,16 @@
+@import "../Base/variables";
+body {
+  background-color: $background-color-dark;
+}
+.main {
+  background-color: $secondary-background-color-dark;
+  box-shadow: 0 0 4.5rem rgba($black-color, 40%);
+  .primary-heading {
+    color: $white-color;
+  }
+  .input {
+    input[type] {
+      background-color: transparent;
+    }
+  }
+}

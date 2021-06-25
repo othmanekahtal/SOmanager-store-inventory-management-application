@@ -1,0 +1,5 @@
+.overlay_popup {
+  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background-color: rgba($black-color, 0.8);
+  }
+}

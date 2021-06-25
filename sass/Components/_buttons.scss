@@ -1,0 +1,34 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-size: 2.2rem;
+  font-family: inherit;
+  border: 2px solid currentColor;
+  background-color: transparent;
+  padding: 1rem 4.5rem;
+  border-radius: 15px;
+  font-weight: $regular-weight;
+  text-transform: uppercase;
+  transition: all 0.35s ease-in-out;
+  &__primary {
+    color: $red-color;
+    &:hover {
+      background-color: $red-color;
+      color: $white-color;
+      border-color: $red-color;
+    }
+  }
+  &__secondary {
+    color: $blue-color;
+    &:hover {
+      background-color: $blue-color;
+      color: $white-color;
+      border-color: $blue-color;
+    }
+  }
+}
+.btn.confirm_btn {
+  grid-column: 1/-1 !important;
+  justify-self: center !important;
+}
